@@ -10,6 +10,7 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [
 
 const options: BetterAuthOptions = {
   baseURL: process.env.BACKEND_URL || "http://localhost:5000",
+  secret: process.env.BETTER_AUTH_SECRET,
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),

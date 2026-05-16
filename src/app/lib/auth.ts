@@ -16,7 +16,6 @@ const options: BetterAuthOptions = {
   }),
   trustedOrigins: [
         ...allowedOrigins,
-        "http://localhost:5000"
     ],
   emailAndPassword: {
     enabled: true,
@@ -29,6 +28,7 @@ const options: BetterAuthOptions = {
   },
   advanced: {
         defaultCookieAttributes: {
+          domain: process.env.ALLOWED_ORIGINS as string || "https://localhost:3000",
             sameSite: "none",
             secure: true,
             partitioned: true,

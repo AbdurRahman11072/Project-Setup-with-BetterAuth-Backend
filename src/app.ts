@@ -4,6 +4,7 @@ import express, { Application } from "express";
 import { auth } from "./app/lib/auth";
 
 const app: Application = express();
+app.set("trust proxy", 1);
 
 app.use(cors( {
     origin: process.env.ALLOWED_ORIGINS?.split(",") || "http://localhost:3000",
